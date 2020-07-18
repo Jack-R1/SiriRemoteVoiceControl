@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0498E7A724BF1A93004E276C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E7A624BF1A93004E276C /* main.m */; };
+		0498E7C924BF210D004E276C /* TPCircularBuffer+AudioBufferList.c in Sources */ = {isa = PBXBuildFile; fileRef = 0498E7AF24BF210D004E276C /* TPCircularBuffer+AudioBufferList.c */; };
+		0498E7CA24BF210D004E276C /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 0498E7B024BF210D004E276C /* TPCircularBuffer.c */; };
+		0498E7CB24BF210D004E276C /* libopus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498E7BB24BF210D004E276C /* libopus.a */; };
+		0498E7CC24BF210E004E276C /* OKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E7C024BF210D004E276C /* OKUtilities.m */; };
+		0498E7CD24BF210E004E276C /* OKDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E7C124BF210D004E276C /* OKDecoder.m */; };
+		0498E7CE24BF210E004E276C /* OKEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E7C324BF210D004E276C /* OKEncoder.m */; };
+		0498E7CF24BF210E004E276C /* OpusKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E7C424BF210D004E276C /* OpusKit.m */; };
+		0498E7D024BF210E004E276C /* OKPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E7C524BF210D004E276C /* OKPacket.m */; };
+		0498E7D124BF210E004E276C /* OKCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E7C624BF210D004E276C /* OKCodec.m */; };
+		0498E7DA24BF2292004E276C /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E7D924BF2292004E276C /* AudioController.m */; };
+		0498E7DB24C14A64004E276C /* EZAudioOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498E7D324BF2248004E276C /* EZAudioOSX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +36,31 @@
 /* Begin PBXFileReference section */
 		0498E7A324BF1A93004E276C /* SiriRemoteVoiceControl */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SiriRemoteVoiceControl; sourceTree = BUILT_PRODUCTS_DIR; };
 		0498E7A624BF1A93004E276C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0498E7AE24BF210D004E276C /* TPCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPCircularBuffer.h; sourceTree = "<group>"; };
+		0498E7AF24BF210D004E276C /* TPCircularBuffer+AudioBufferList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "TPCircularBuffer+AudioBufferList.c"; sourceTree = "<group>"; };
+		0498E7B024BF210D004E276C /* TPCircularBuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TPCircularBuffer.c; sourceTree = "<group>"; };
+		0498E7B124BF210D004E276C /* TPCircularBuffer+AudioBufferList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer+AudioBufferList.h"; sourceTree = "<group>"; };
+		0498E7B524BF210D004E276C /* opus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opus.h; sourceTree = "<group>"; };
+		0498E7B624BF210D004E276C /* opus_multistream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opus_multistream.h; sourceTree = "<group>"; };
+		0498E7B724BF210D004E276C /* opus_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opus_types.h; sourceTree = "<group>"; };
+		0498E7B824BF210D004E276C /* opus_defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opus_defines.h; sourceTree = "<group>"; };
+		0498E7B924BF210D004E276C /* opus_projection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opus_projection.h; sourceTree = "<group>"; };
+		0498E7BB24BF210D004E276C /* libopus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopus.a; sourceTree = "<group>"; };
+		0498E7BD24BF210D004E276C /* OKEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKEncoder.h; sourceTree = "<group>"; };
+		0498E7BE24BF210D004E276C /* OKPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKPacket.h; sourceTree = "<group>"; };
+		0498E7BF24BF210D004E276C /* OpusKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpusKit.h; sourceTree = "<group>"; };
+		0498E7C024BF210D004E276C /* OKUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtilities.m; sourceTree = "<group>"; };
+		0498E7C124BF210D004E276C /* OKDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKDecoder.m; sourceTree = "<group>"; };
+		0498E7C224BF210D004E276C /* OKCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKCodec.h; sourceTree = "<group>"; };
+		0498E7C324BF210D004E276C /* OKEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKEncoder.m; sourceTree = "<group>"; };
+		0498E7C424BF210D004E276C /* OpusKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpusKit.m; sourceTree = "<group>"; };
+		0498E7C524BF210D004E276C /* OKPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKPacket.m; sourceTree = "<group>"; };
+		0498E7C624BF210D004E276C /* OKCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKCodec.m; sourceTree = "<group>"; };
+		0498E7C724BF210D004E276C /* OKDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKDecoder.h; sourceTree = "<group>"; };
+		0498E7C824BF210D004E276C /* OKUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtilities.h; sourceTree = "<group>"; };
+		0498E7D324BF2248004E276C /* EZAudioOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EZAudioOSX.framework; sourceTree = "<group>"; };
+		0498E7D824BF2292004E276C /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
+		0498E7D924BF2292004E276C /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0498E7CB24BF210D004E276C /* libopus.a in Frameworks */,
+				0498E7DB24C14A64004E276C /* EZAudioOSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +81,7 @@
 			children = (
 				0498E7A524BF1A93004E276C /* SiriRemoteVoiceControl */,
 				0498E7A424BF1A93004E276C /* Products */,
+				0498E7D224BF2248004E276C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +96,97 @@
 		0498E7A524BF1A93004E276C /* SiriRemoteVoiceControl */ = {
 			isa = PBXGroup;
 			children = (
+				0498E7D724BF2292004E276C /* EZAudio */,
+				0498E7B224BF210D004E276C /* libopus */,
+				0498E7BC24BF210D004E276C /* OpusKit */,
+				0498E7AD24BF210D004E276C /* TPCircularBuffer */,
 				0498E7A624BF1A93004E276C /* main.m */,
 			);
 			path = SiriRemoteVoiceControl;
+			sourceTree = "<group>";
+		};
+		0498E7AD24BF210D004E276C /* TPCircularBuffer */ = {
+			isa = PBXGroup;
+			children = (
+				0498E7AE24BF210D004E276C /* TPCircularBuffer.h */,
+				0498E7AF24BF210D004E276C /* TPCircularBuffer+AudioBufferList.c */,
+				0498E7B024BF210D004E276C /* TPCircularBuffer.c */,
+				0498E7B124BF210D004E276C /* TPCircularBuffer+AudioBufferList.h */,
+			);
+			path = TPCircularBuffer;
+			sourceTree = "<group>";
+		};
+		0498E7B224BF210D004E276C /* libopus */ = {
+			isa = PBXGroup;
+			children = (
+				0498E7B324BF210D004E276C /* include */,
+				0498E7BA24BF210D004E276C /* lib */,
+			);
+			path = libopus;
+			sourceTree = "<group>";
+		};
+		0498E7B324BF210D004E276C /* include */ = {
+			isa = PBXGroup;
+			children = (
+				0498E7B424BF210D004E276C /* opus */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		0498E7B424BF210D004E276C /* opus */ = {
+			isa = PBXGroup;
+			children = (
+				0498E7B524BF210D004E276C /* opus.h */,
+				0498E7B624BF210D004E276C /* opus_multistream.h */,
+				0498E7B724BF210D004E276C /* opus_types.h */,
+				0498E7B824BF210D004E276C /* opus_defines.h */,
+				0498E7B924BF210D004E276C /* opus_projection.h */,
+			);
+			path = opus;
+			sourceTree = "<group>";
+		};
+		0498E7BA24BF210D004E276C /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				0498E7BB24BF210D004E276C /* libopus.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		0498E7BC24BF210D004E276C /* OpusKit */ = {
+			isa = PBXGroup;
+			children = (
+				0498E7BD24BF210D004E276C /* OKEncoder.h */,
+				0498E7BE24BF210D004E276C /* OKPacket.h */,
+				0498E7BF24BF210D004E276C /* OpusKit.h */,
+				0498E7C024BF210D004E276C /* OKUtilities.m */,
+				0498E7C124BF210D004E276C /* OKDecoder.m */,
+				0498E7C224BF210D004E276C /* OKCodec.h */,
+				0498E7C324BF210D004E276C /* OKEncoder.m */,
+				0498E7C424BF210D004E276C /* OpusKit.m */,
+				0498E7C524BF210D004E276C /* OKPacket.m */,
+				0498E7C624BF210D004E276C /* OKCodec.m */,
+				0498E7C724BF210D004E276C /* OKDecoder.h */,
+				0498E7C824BF210D004E276C /* OKUtilities.h */,
+			);
+			path = OpusKit;
+			sourceTree = "<group>";
+		};
+		0498E7D224BF2248004E276C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0498E7D324BF2248004E276C /* EZAudioOSX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0498E7D724BF2292004E276C /* EZAudio */ = {
+			isa = PBXGroup;
+			children = (
+				0498E7D824BF2292004E276C /* AudioController.h */,
+				0498E7D924BF2292004E276C /* AudioController.m */,
+			);
+			path = EZAudio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +246,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0498E7DA24BF2292004E276C /* AudioController.m in Sources */,
+				0498E7CF24BF210E004E276C /* OpusKit.m in Sources */,
+				0498E7CA24BF210D004E276C /* TPCircularBuffer.c in Sources */,
 				0498E7A724BF1A93004E276C /* main.m in Sources */,
+				0498E7D124BF210E004E276C /* OKCodec.m in Sources */,
+				0498E7CD24BF210E004E276C /* OKDecoder.m in Sources */,
+				0498E7CC24BF210E004E276C /* OKUtilities.m in Sources */,
+				0498E7CE24BF210E004E276C /* OKEncoder.m in Sources */,
+				0498E7C924BF210D004E276C /* TPCircularBuffer+AudioBufferList.c in Sources */,
+				0498E7D024BF210E004E276C /* OKPacket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +375,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SiriRemoteVoiceControl/libopus/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -247,6 +392,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SiriRemoteVoiceControl/libopus/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
