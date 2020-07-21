@@ -1,6 +1,0 @@
-framework module EZAudioOSX {
-  umbrella header "EZAudioOSX.h"
-
-  export *
-  module * { export * }
-}
