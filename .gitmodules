@@ -1,3 +1,0 @@
-[submodule "externals/TrackMagic"]
-	path = externals/TrackMagic
-	url = git://github.com/calftrail/TrackMagic.git
