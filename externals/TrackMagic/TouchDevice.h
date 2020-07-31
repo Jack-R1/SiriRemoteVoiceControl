@@ -17,8 +17,12 @@
 }
 
 + (id)defaultTouchDevice;
++ (id)siriRemoteTouchDevice;
+
++ (NSUInteger) touchDeviceCount;
 
 @property (readonly, copy) NSSet* touches;
+
 - (void)start;
 - (void)stop;
 

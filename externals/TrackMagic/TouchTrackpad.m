@@ -26,6 +26,11 @@ static inline NSPoint tlNSDeltaPoint(NSPoint p1, NSPoint p2);
 
 @implementation TouchTrackpad
 
+- (NSNumber *)lastTouchTime
+{
+    return [NSNumber numberWithDouble: downTime];
+}
+
 @synthesize touches;
 
 + (void)initialize {
@@ -45,6 +50,12 @@ static inline NSPoint tlNSDeltaPoint(NSPoint p1, NSPoint p2);
 							   kCGEventTapOptionDefault,
 							   blockedTypes, suppressOthers, self);
 		NSAssert(tap, @"Couldn't create tap!");
+        
+        //JackR1 - 01/01/2020
+        //initialize downTime as its used to determine the last touch
+        //time in AppDelgate checkdevice loop for SiriRemote
+        downTime = mach_absolute_time();
+        
 		CFRunLoopSourceRef src = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, tap, 0);
 		CFRunLoopAddSource(CFRunLoopGetCurrent(), src, kCFRunLoopCommonModes);
 		
@@ -145,6 +156,7 @@ static inline NSPoint tlNSDeltaPoint(NSPoint p1, NSPoint p2);
 	CGFloat dY = newPos.y - oldPos.y;
 	
 	CGEventRef e = NULL;
+    //where previously one finger movement and now one finger movement
 	if ([oldTouches count] == 1 && [newTouches count] == 1) {
 		const CGFloat scale = 500;
 		CGPoint cursor = [[self class] currentCursorPosition];
@@ -153,6 +165,7 @@ static inline NSPoint tlNSDeltaPoint(NSPoint p1, NSPoint p2);
 		cursor = [[self class] constrainPointToVisible:cursor];
 		e = CGEventCreateMouseEvent(source, kCGEventMouseMoved, cursor, 0);
 	}
+    //where previously two fingers movement and now two finger movement
 	else if ([oldTouches count] == 2 && [newTouches count] == 2) {
 		const CGFloat scale = 1000;
 		int32_t scrollY = (int32_t)(dY * scale);
@@ -160,10 +173,12 @@ static inline NSPoint tlNSDeltaPoint(NSPoint p1, NSPoint p2);
 		e = CGEventCreateScrollWheelEvent(source, kCGScrollEventUnitPixel,
 										  2, scrollY, scrollX);
 	}
+    //if no previous touches
 	else if ([oldTouches count] == 0 && [newTouches count]) {
 		firstDown = newPos;
 		downTime = mach_absolute_time();
 	}
+    //if previous touches and now no touches trigger a tap
 	else if ([oldTouches count] && [newTouches count] == 0) {
 		uint64_t nanoDuration = mach_absolute_time() - downTime;
 		NSPoint movement = tlNSDeltaPoint(firstDown, oldPos);
@@ -171,8 +186,10 @@ static inline NSPoint tlNSDeltaPoint(NSPoint p1, NSPoint p2);
 		NSTimeInterval duration = nanoDuration / 1000000000.0;
 		//printf("up - %f @ %fs\n", approxDistance, duration);
 		
-		const NSTimeInterval tapDuration = 0.35;
-		const CGFloat tapDistance = 0.01f;
+        //JackR1 - 01/01/2020
+        //optimal tapDuration and tapDistance for SiriRemote
+		const NSTimeInterval tapDuration = 0.50; //0.35;
+		const CGFloat tapDistance = 0.04f; //0.01f;
 		if (duration < tapDuration && approxDistance < tapDistance) {
 			CGPoint pos = [[self class] currentCursorPosition];
 			CGEventRef e0 = CGEventCreateMouseEvent(source, kCGEventLeftMouseDown, pos, 0);
@@ -189,6 +206,9 @@ static inline NSPoint tlNSDeltaPoint(NSPoint p1, NSPoint p2);
 	}
 }
 
+//device = [[TouchDevice siriRemoteTouchDevice] retain];
+//[trackpad bind:@"touches" toObject:device withKeyPath:@"touches" options:nil];
+//the above in AppDelegate.m trigger below when touches dictionary/nsset is updated in touchdevice
 - (void)observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object
 						change:(NSDictionary*)change context:(void*)context
 {

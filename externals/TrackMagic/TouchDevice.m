@@ -59,6 +59,43 @@ static void receiveFrame(MTDeviceRef device,
 	return [touchDevice autorelease];
 }
 
+//JackR1 - 01/01/2020
++ (id)siriRemoteTouchDevice {
+    
+    NSMutableArray* deviceList = (__bridge NSMutableArray*)MTDeviceCreateList(); //grab our device list
+    
+    MTDeviceRef dev;
+    
+    //assume apple tv remote trackpad is the second one after the default for the system
+    //MTDeviceGetDeviceID seems to identify the device, but there is no way of knowing it
+    //unless you run this in debug, on my system it almost matches 3 hex pairs of the mac
+    //address, not sure if thats a coincidence
+    if([deviceList count] > 1)
+        dev = [deviceList objectAtIndex:1];
+    else
+        dev = nil;
+           
+    if (!dev) return nil;
+    
+    //NSAssert(dev!=nil, @"Could not find SiriRemote TouchDevice");
+    
+    uint64_t deviceID;
+    MTDeviceGetDeviceID(dev,&deviceID);
+    
+    NSLog(@"MTDeviceGetDeviceID: %016llX", deviceID);
+    
+    id touchDevice = [[self alloc] initWithDevice:dev];
+    CFRelease(dev);
+    return [touchDevice autorelease];
+}
+
+//JackR1 - 01/01/2020
++ (NSUInteger)touchDeviceCount {
+    
+    NSMutableArray* deviceList = (__bridge NSMutableArray*)MTDeviceCreateList(); //grab our device list
+    
+    return [deviceList count];
+}
 
 - (void)start {
 	MTDeviceStart(device, 0);

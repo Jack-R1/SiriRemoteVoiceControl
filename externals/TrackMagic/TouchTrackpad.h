@@ -21,6 +21,7 @@
 	BOOL suppressed;
 }
 
+@property (readonly, assign) NSNumber *lastTouchTime;
 @property (copy) NSSet* touches;
 
 @end

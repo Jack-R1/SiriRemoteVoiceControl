@@ -15,4 +15,7 @@
 	TouchDevice* device;
 	TouchTrackpad* trackpad;
 }
+
+- (void)checkDevice:(NSTimer*)timer;
+
 @end
