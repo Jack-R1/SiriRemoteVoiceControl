@@ -214,7 +214,7 @@ int main(int argc, const char * argv[]) {
                     else
                     {
                         NSLog(@"frame = %@", [frame stringByReplacingOccurrencesOfString:@" " withString: @""]);
-                        NSLog(@"frame length %lu is less than required packetLen %d", [frameData length], packetLen);
+                        NSLog(@"packet data: %lu bytes is less than required in packet header: %d bytes", [frameData length]-1, packetLen);
                     }
                 }
             }
@@ -326,7 +326,7 @@ int main(int argc, const char * argv[]) {
                                 int32_t availableBytes;
                                 TPCircularBufferTail([audioController outputBuffer], &availableBytes);
                                 
-                                NSLog(@"Available Bytes = %d", availableBytes);
+                                //NSLog(@"Available Bytes = %d", availableBytes);
                                 
                                 //sleep to let audio play out
                                 [NSThread sleepForTimeInterval:0.8f];
@@ -390,7 +390,7 @@ int main(int argc, const char * argv[]) {
                                         else
                                         {
                                             NSLog(@"frame = %@", [frame stringByReplacingOccurrencesOfString:@" " withString: @""]);
-                                            NSLog(@"frame length %lu is less than required packetLen %d", [frameData length], packetLen);
+                                            NSLog(@"packet data: %lu bytes is less than required in packet header: %d bytes", [frameData length]-1, packetLen);
                                         }
                                     }
                                     
