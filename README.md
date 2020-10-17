@@ -93,7 +93,7 @@ Steps:
 
     you can also do
 
-    echo "password" | sudo -S ./PacketLogger_10.1.app/Contents/Resources/packetlogger convert -s -f nhdr | ./SiriRemoteVoiceDecode AA:BB:CC:DD:EE:FF
+    echo "password" | sudo -S ./PacketLogger.app/Contents/Resources/packetlogger convert -s -f nhdr | ./SiriRemoteVoiceControl AA:BB:CC:DD:EE:FF
 
     This will pipe your password to packet logger so you dont always have to type it in but I would not recommend to show your
     password in plain site. Note the -S after sudo.
