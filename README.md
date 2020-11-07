@@ -1,5 +1,7 @@
 # Integrate Apple TV 4th Gen/Siri Remote with macOS for voice and touch control
 
+![](SiriRemoteVoiceControl.gif)
+
 This is the fruits of my work to integrate the Apple TV remote with macOS
 
 If you have an apple tv 4th gen remote lying around that you have tried to pair
