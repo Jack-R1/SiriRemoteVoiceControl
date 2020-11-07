@@ -130,8 +130,11 @@ Steps:
 20. Open System Preferences -> Sound -> Input and set Soundflower (2ch) as input
 
 21. Open System Preferences -> Keyboard -> Dictation
+
 		a. Turn on Dictation if not already on.
+		
 		b. Set Soundflower (2ch) as input to the mic.
+		
 		c. Note the shortcut to trigger dictation.
 
 22. In terminal, stop (Control-C) and rerun the command in step 14.
